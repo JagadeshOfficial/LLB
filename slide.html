@@ -3,115 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Image Slider</title>
+    <title>Lawyer Website</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* styles.css */
+        /* Ensure the slider itself has a fixed size and is centered */
+        .slider {
+            width: 70%; /* Adjust this value to decrease the width */
+            max-width: 1000px; /* Optional: Set a maximum width */
+            margin: 25px auto; /* Center the slider horizontally */
+            height: calc(100vh - 150px); /* Adjust height to fit between header and footer */
+            overflow: hidden; /* Hide any overflow */
+            position: relative; /* Positioning for controls */
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
+        /* Ensure the slides container doesn't stretch beyond the slider */
+        .slides {
+            display: flex;
+            width: calc(100% * 8); /* Total width is 100% * number of slides */
+            animation: slideAnimation 20s infinite; /* Slide animation */
+        }
 
-.slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
+        /* Style for individual slides */
+        .slide {
+            flex: 0 0 12.5%; /* Each slide takes full width of the slider divided by number of slides */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Center content vertically */
+            height: 100%; /* Slide height matches the slider height */
+            position: relative;
+        }
 
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
+        /* Set fixed dimensions for slide images */
+        .slide img {
+            width: 100%; /* Make image fit within the slide width */
+            height: 100%; /* Make image fit within the slide height */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+        }
 
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
+        /* Style for slide titles */
+        .slide-title {
+            text-align: center;
+            padding: 10px;
+           
+            color: #fff;
+            font-size: 24px; /* Larger font size for better visibility */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            animation: titleAnimation 20s infinite; /* Animate the title along with the slide */
+            width: 100%;
+            
+        }
 
-.slide img {
-    width: 100%;
-    height: auto; /* Adjust as needed */
-    display: block;
-}
+        /* Keyframes for sliding animation */
+        @keyframes slideAnimation {
+            0% {
+                transform: translateX(0%);
+            }
+            12.5% {
+                transform: translateX(0%);
+            }
+            25% {
+                transform: translateX(-12.5%);
+            }
+            37.5% {
+                transform: translateX(-12.5%);
+            }
+            50% {
+                transform: translateX(-25%);
+            }
+            62.5% {
+                transform: translateX(-25%);
+            }
+            75% {
+                transform: translateX(-37.5%);
+            }
+            87.5% {
+                transform: translateX(-37.5%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
-.slide-title {
-    text-align: center;
-    font-size: 1.5em;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
+        /* Keyframes for title animation to match the slide movement */
+        @keyframes titleAnimation {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+            12.5% {
+                transform: translate(-50%, -50%);
+            }
+            25% {
+                transform: translate(calc(-150%), -50%);
+            }
+            37.5% {
+                transform: translate(calc(-150%), -50%);
+            }
+            50% {
+                transform: translate(calc(-250%), -50%);
+            }
+            62.5% {
+                transform: translate(calc(-250%), -50%);
+            }
+            75% {
+                transform: translate(calc(-350%), -50%);
+            }
+            87.5% {
+                transform: translate(calc(-350%), -50%);
+            }
+            100% {
+                transform: translate(calc(-450%), -50%);
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/JUSTIN_LAW.png" alt="TCS Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <!-- Trial Court Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Trial Court Services <span>&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#">Criminal Law</a>
+                            <a href="#">Civil Law</a>
+                            <a href="#">Family Law</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a href="#">Property Law</a>
+                            <a href="#">Employment Law</a>
+                            <a href="#">Contract Law</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- High Court Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">High Court Services <span>&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#">Appeals</a>
+                            <a href="#">Writ Petitions</a>
+                            <a href="#">Bail Matters</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a href="#">Corporate Law</a>
+                            <a href="#">Constitutional Law</a>
+                            <a href="#">Administrative Law</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Central Court Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Central Court Services <span>&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#">Tax Law</a>
+                            <a href="#">Banking Law</a>
+                            <a href="#">Environmental Law</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a href="#">Consumer Law</a>
+                            <a href="#">Intellectual Property</a>
+                            <a href="#">International Law</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- State Court Services Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">State Court Services <span>&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-column">
+                            <a href="#">Land Disputes</a>
+                            <a href="#">State Criminal Cases</a>
+                            <a href="#">Family Law</a>
+                        </div>
+                        <div class="dropdown-column">
+                            <a href="#">Property Law</a>
+                            <a href="#">Employment Law</a>
+                            <a href="#">Contract Law</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content -->
     <section class="slider">
         <div class="slides">
             <!-- Image 1 -->
             <div class="slide">
-                <img src="images/JUSTIN LAW.png" alt="Image 1">
-                <div class="slide-title">The 2024 TCS North America Summit</div>
+                <img src="images/download (1).jpeg" alt="Image 1">
+                <div class="slide-title">About</div>
             </div>
             <!-- Image 2 -->
             <div class="slide">
-                <img src="images/JUSTIN_LAW.png" alt="Image 2">
-                <div class="slide-title">Enterprise Readiness in the Era of AI</div>
+                <img src="images/download (2).jpeg" alt="Image 2">
+                <div class="slide-title">Constitutional Law</div>
             </div>
-            <!-- Additional Images -->
-            <!-- Repeat the above block for each additional image -->
-        </div>
-        <div class="controls">
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+            <!-- Image 3 -->
+            <div class="slide">
+                <img src="images/download.jpeg" alt="Image 3">
+                <div class="slide-title">Education Law</div>
+            </div>
+            <!-- Image 4 -->
+            <div class="slide">
+                <img src="images/images.jpeg" alt="Image 4">
+                <div class="slide-title">Environmental Law</div>
+            </div>
+            <!-- Image 5 -->
+            <div class="slide">
+                <img src="images/images (1).jpeg" alt="Image 5">
+                <div class="slide-title">LAW</div>
+            </div>
+            <!-- Image 6 -->
+            <div class="slide">
+                <img src="images/images (2).jpeg" alt="Image 6">
+                <div class="slide-title">Image</div>
+            </div>
+            <!-- Image 7 -->
+            <div class="slide">
+                <img src="images/images (3).jpeg" alt="Image 7">
+                <div class="slide-title">LAW</div>
+            </div>
+            <!-- Image 8 -->
+            <div class="slide">
+                <img src="images/images.jpeg" alt="Image 8">
+                <div class="slide-title">LAW</div>
+            </div>
         </div>
     </section>
 
-    <script>
-        // script.js
-
-let slideIndex = 0;
-
-function plusSlides(n) {
-    const slides = document.querySelector('.slides');
-    const slideCount = document.querySelectorAll('.slide').length;
-    slideIndex += n;
-
-    if (slideIndex >= slideCount) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = slideCount - 1;
-    }
-
-    const offset = -slideIndex * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-}
-
-// Initialize
-plusSlides(0);
-
-    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <button onclick="location.href='#supreme-court-services'">Supreme Court Services</button>
+        <button onclick="location.href='#contact-us'">Team</button>
+        <button onclick="location.href='#contact-us'">Contact Us</button>
+    </footer>
 </body>
 </html>

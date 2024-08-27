@@ -88,68 +88,127 @@ body {
 
 
 
-
-/* Slider container styling */
+/* Ensure the slider itself has a fixed size and is centered */
 .slider {
-    flex-grow: 1;
-    position: relative;
-    overflow: hidden;
+    width: 70%; /* Adjust this value to decrease the width */
+    max-width: 1000px; /* Optional: Set a maximum width */
+    margin: 25px auto; /* Center the slider horizontally */
+    height: calc(100vh - 150px); /* Adjust height to fit between header and footer */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; /* Positioning for controls */
 }
 
-/* Slides container */
+/* Ensure the slides container doesn't stretch beyond the slider */
 .slides {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    height: 100%;
+    width: calc(100% * 8); /* Total width is 100% * number of slides */
+    animation: slideAnimation 20s infinite; /* Slide animation */
 }
 
-/* Individual slide */
+/* Style for individual slides */
 .slide {
-    min-width: 100%;
-    height: 100%;
-    position: relative;
+    flex: 0 0 12.5%; /* Each slide takes full width of the slider divided by number of slides */
     box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100%; /* Slide height matches the slider height */
+    position: relative;
 }
 
-/* Image styling to fit within slider */
+/* Set fixed dimensions for slide images */
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the image fits within the available space */
+    width: 100%; /* Make image fit within the slide width */
+    height: 100%; /* Make image fit within the slide height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
 }
 
-/* Slide title styling */
+/* Style for slide titles */
 .slide-title {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
     padding: 10px;
-}
-
-/* Navigation controls */
-.controls {
+   
+    color: #fff;
+    font-size: 24px; /* Larger font size for better visibility */
     position: absolute;
     top: 50%;
+    left: 50%;
+    
+    animation: titleAnimation 20s infinite; /* Animate the title along with the slide */
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    
 }
 
-.controls button {
-    background-color: rgba(0, 0, 0, 0.5);
+/* Keyframes for sliding animation */
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+    12.5% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-12.5%);
+    }
+    37.5% {
+        transform: translateX(-12.5%);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    62.5% {
+        transform: translateX(-25%);
+    }
+    75% {
+        transform: translateX(-37.5%);
+    }
+    87.5% {
+        transform: translateX(-37.5%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Keyframes for title animation to match the slide movement */
+@keyframes titleAnimation {
+    0% {
+        transform: translateX(0%);
+    }
+    12.5% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-12.5%);
+    }
+    37.5% {
+        transform: translateX(-12.5%);
+    }
+    50% {
+        transform: translateX(-25%);
+    }
+    62.5% {
+        transform: translateX(-25%);
+    }
+    75% {
+        transform: translateX(-37.5%);
+    }
+    87.5% {
+        transform: translateX(-37.5%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
     border: none;
-    color: white;
-    padding: 15px;
+    padding: 10px;
     cursor: pointer;
 }
 
-.controls button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
+
 
 /* Footer styling */
 footer {
