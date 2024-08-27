@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lawyer Website</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <!-- Header -->
@@ -16,8 +17,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">About</a></li>
-
-                <!-- Trail Court Services Dropdown -->
+                <!-- Trial Court Services Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Trial Court Services <span>&#9662;</span></a>
                     <div class="dropdown-content">
@@ -33,7 +33,6 @@
                         </div>
                     </div>
                 </li>
-
                 <!-- High Court Services Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropbtn">High Court Services <span>&#9662;</span></a>
@@ -50,7 +49,6 @@
                         </div>
                     </div>
                 </li>
-
                 <!-- Central Court Services Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Central Court Services <span>&#9662;</span></a>
@@ -67,7 +65,6 @@
                         </div>
                     </div>
                 </li>
-
                 <!-- State Court Services Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="dropbtn">State Court Services <span>&#9662;</span></a>
@@ -88,10 +85,64 @@
         </nav>
     </header>
 
+    <!-- Main content -->
+    <section class="slider">
+        <div class="slides">
+            <!-- Image 1 -->
+            <div class="slide">
+                <img src="images/about.png" alt="Image 1">
+                <div class="slide-title">about</div>
+            </div>
+            <!-- Image 2 -->
+            <div class="slide">
+                <img src="images/Constitutional_Law.png" alt="Image 2">
+                <div class="slide-title">Constitutional Law</div>
+            </div>
+            <!-- Image 1 -->
+            <div class="slide">
+                <img src="images/Education_Law.png" alt="Image 1">
+                <div class="slide-title">Education Law</div>
+            </div>
+            <!-- Image 2 -->
+            <div class="slide">
+                <img src="images/Envirnoment_Law.png" alt="Image 2">
+                <div class="slide-title">Envirnoment Law</div>
+            </div>
+            <!-- Image 1 -->
+            <div class="slide">
+                <img src="images/HD-wallpaper-themis-statuette-of-justice-court-of-law-lawyers-statuette-of-themis-law-scales-of-justice.jpg" alt="Image 1">
+                <div class="slide-title">LAW</div>
+            </div>
+            <!-- Image 2 -->
+            <div class="slide">
+                <img src="images/images.jpeg" alt="Image 2">
+                <div class="slide-title">Image</div>
+            </div>
+            <!-- Image 1 -->
+            <div class="slide">
+                <img src="images/Law.jpg" alt="Image 1">
+                <div class="slide-title">LAW</div>
+            </div>
+            <!-- Image 2 -->
+            <div class="slide">
+                <img src="images/Tax_Law.png" alt="Image 2">
+                <div class="slide-title">LAW</div>
+            </div>
+            <!-- Additional Images -->
+            <!-- Repeat the above block for each additional image -->
+        </div>
+        <div class="controls">
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <button onclick="location.href='#supreme-court-services'">Supreme Court Services</button>
+        <button onclick="location.href='#contact-us'">Team</button>
         <button onclick="location.href='#contact-us'">Contact Us</button>
+
     </footer>
 
     <script src="script.js"></script>

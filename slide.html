@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Adjust as needed */
+    display: block;
+}
+
+.slide-title {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+    </style>
+</head>
+<body>
+    <section class="slider">
+        <div class="slides">
+            <!-- Image 1 -->
+            <div class="slide">
+                <img src="images/JUSTIN LAW.png" alt="Image 1">
+                <div class="slide-title">The 2024 TCS North America Summit</div>
+            </div>
+            <!-- Image 2 -->
+            <div class="slide">
+                <img src="images/JUSTIN_LAW.png" alt="Image 2">
+                <div class="slide-title">Enterprise Readiness in the Era of AI</div>
+            </div>
+            <!-- Additional Images -->
+            <!-- Repeat the above block for each additional image -->
+        </div>
+        <div class="controls">
+            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <script>
+        // script.js
+
+let slideIndex = 0;
+
+function plusSlides(n) {
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    slideIndex += n;
+
+    if (slideIndex >= slideCount) {
+        slideIndex = 0;
+    } else if (slideIndex < 0) {
+        slideIndex = slideCount - 1;
+    }
+
+    const offset = -slideIndex * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+}
+
+// Initialize
+plusSlides(0);
+
+    </script>
+</body>
+</html>
