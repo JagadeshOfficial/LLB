@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawyer Website</title>
+    <title>Lawyer Website - Contact Us</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav class="navbar">
-            <div class="logo" >
+            <div class="logo">
                 <img src="images/JUSTIN_LAW.png" alt="TCS Logo">
             </div>
             <ul class="nav-links">
@@ -39,7 +38,7 @@
                     <div class="dropdown-content">
                         <div class="dropdown-column">
                             <a href="contact.html">Appeals</a>
-                            <a href="contact.html">Write Petitions</a>
+                            <a href="contact.html">Writ Petitions</a>
                             <a href="contact.html">Bail Matters</a>
                         </div>
                         <div class="dropdown-column">
@@ -85,55 +84,49 @@
         </nav>
     </header>
 
-    <!-- Main content -->
-    <section class="slider">
-        <div class="slides">
-            <!-- Image 1 -->
-            <div class="slide">
-                <img src="images/download (1).jpeg" alt="Image 1">
-                <div class="slide-title">about</div>
-            </div>
-            <!-- Image 2 -->
-            <div class="slide">
-                <img src="images/download (2).jpeg" alt="Image 2">
-                <div class="slide-title">Constitutional Law</div>
-            </div>
-            <!-- Image 1 -->
-            <div class="slide">
-                <img src="images/download.jpeg" alt="Image 1">
-                <div class="slide-title">Education Law</div>
-            </div>
-            <!-- Image 2 -->
-            <div class="slide">
-                <img src="images/images.jpeg" alt="Image 2">
-                <div class="slide-title">Envirnoment Law</div>
-            </div>
-            <!-- Image 1 -->
-            <div class="slide">
-                <img src="images/images (1).jpeg" alt="Image 1">
-                <div class="slide-title">LAW</div>
-            </div>
-            <!-- Image 2 -->
-            <div class="slide">
-                <img src="images/images (2).jpeg" alt="Image 2">
-                <div class="slide-title">Image</div>
-            </div>
-            <!-- Image 1 -->
-            <div class="slide">
-                <img src="images/images (3).jpeg" alt="Image 1">
-                <div class="slide-title">LAW</div>
-            </div>
-            <!-- Image 2 -->
-            <div class="slide">
-                <img src="images/images.jpeg" alt="Image 2">
-                <div class="slide-title">LAW</div>
-            </div>
-            <!-- Additional Images -->
-            <!-- Repeat the above block for each additional image -->
-        </div>
-        <div class="controls">
-            <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-            <button class="next" onclick="plusSlides(1)">&#10095;</button>
+    <!-- Main content - Contact Form -->
+    <section class="contact-form">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <form action="submit_form.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+                
+                <label for="case">Type of Case:</label>
+                <select id="case" name="case" required>
+                    <option value="">Select a case type</option>
+                    <option value="criminal">Criminal Law</option>
+                    <option value="civil">Civil Law</option>
+                    <option value="family">Family Law</option>
+                    <option value="property">Property Law</option>
+                    <option value="employment">Employment Law</option>
+                    <option value="contract">Contract Law</option>
+                    <option value="corporate">Corporate Law</option>
+                    <option value="constitutional">Constitutional Law</option>
+                    <option value="administrative">Administrative Law</option>
+                    <option value="tax">Tax Law</option>
+                    <option value="banking">Banking Law</option>
+                    <option value="environmental">Environmental Law</option>
+                    <option value="consumer">Consumer Law</option>
+                    <option value="intellectual">Intellectual Property</option>
+                    <option value="international">International Law</option>
+                    <option value="land">Land Disputes</option>
+                </select>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <input type="submit" value="Submit">
+            </form>
         </div>
     </section>
 
@@ -142,27 +135,7 @@
         <button onclick="location.href='#supreme-court-services'">Supreme Court Services</button>
         <button onclick="location.href='#contact-us'">Team</button>
         <button onclick="location.href='contact.html'">Contact Us</button>
-
     </footer>
-    <!-- Chatbot -->
-    <div id="chatbot">
-        <div id="chatbot-header">
-            <span>Chat with us</span>
-            <button id="close-chatbot">&times;</button>
-        </div>
-        <div id="chatbot-content">
-            <div id="chatbot-conversation">
-                <!-- Conversation messages will appear here -->
-            </div>
-            <input type="text" id="chatbot-input" placeholder="Your answer...">
-            <button id="chatbot-submit">Submit</button>
-        </div>
-    </div>
-
-    <!-- Minimized Chatbot Icon -->
-    <div id="chatbot-icon" class="shake">
-        <img src="images/chatbot-icon.png" alt="Chatbot">
-    </div>
 
     <script src="script.js"></script>
 </body>
